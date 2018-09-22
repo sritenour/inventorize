@@ -14,7 +14,9 @@ Features:
 •	Reports to help ensure accurate planning and forecasting
 
 
-Built with Eclipse
+Built with:
+
+Eclipse
 
 
 Authors: 
