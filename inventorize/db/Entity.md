@@ -2,6 +2,8 @@ inventorize ERD
 
 There are 5 entities: Product, Order, Sales, Vendor, and Customer
 
+Entities and attributes:
+
 Product: ProductID (Primary Key), ProductName, Description, Quantity, Price
 
 Order: OrderID (Primary Key), VendorID (Foreign Key), OrderDate, ProductID (Foreign Key), Price, Quantity, Total Price
