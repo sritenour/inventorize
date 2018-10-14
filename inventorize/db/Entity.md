@@ -1,6 +1,8 @@
 inventorize ERD
 
+
 There are 5 entities: Product, Order, Sales, Vendor, and Customer
+
 
 Entities and attributes:
 
@@ -13,6 +15,7 @@ Sales: SalesID (Primary Key), CustomerID (Foreign Key), OrderDate, ProductID (Fo
 Vendor: VendorID (Primary Key), VendorName, VendorAddress, VendorCity, VendorState, VendorZip, VendorPhoneNo
 
 Customer: CustomerID (Primary Key), CustomerName, CustomerAddress, CustomerCity, CustomerState, CustomerZip, CustomerPhoneNo
+
 
 
 The relationships between the entities are as follows:
