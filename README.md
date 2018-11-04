@@ -13,21 +13,10 @@ Features:
 
 •	Reports to help ensure accurate planning and forecasting
 
+Built with: Eclipse
 
-Built with:
+Authors: Larry Maxwell & Shannon Ritenour
 
-Eclipse
+License: This project is licensed under the MIT License.
 
-
-Authors: 
-
-Larry Maxwell & Shannon Ritenour
-
-
-License:
-
-This project is licensed under the MIT License.
-
-Moqup link:
-
-https://app.moqups.com/lamaxwell/D8cjXtUOIx/view
+Moqup link: https://app.moqups.com/lamaxwell/D8cjXtUOIx/view
