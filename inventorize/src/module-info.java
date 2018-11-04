@@ -6,4 +6,6 @@
  *
  */
 module inventorize {
+	requires java.desktop;
+
 }

@@ -1,3 +1,5 @@
+package inventorize;
+
 public class inventorize {
 
 	public static void main(String[] args) {
