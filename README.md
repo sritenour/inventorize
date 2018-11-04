@@ -15,8 +15,8 @@ Features:
 
 Built with: Eclipse
 
-Authors: Larry Maxwell & Shannon Ritenour
+Authors:    Larry Maxwell & Shannon Ritenour
 
-License: This project is licensed under the MIT License.
+License:    This project is licensed under the MIT License.
 
-Moqup link:https://app.moqups.com/lamaxwell/D8cjXtUOIx/view
+Moqup link: https://app.moqups.com/lamaxwell/D8cjXtUOIx/view
