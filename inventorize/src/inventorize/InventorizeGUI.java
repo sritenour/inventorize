@@ -13,7 +13,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class inventorizeui extends JFrame {
+public class InventorizeGUI extends JFrame {
 
 	/**
 	 * 
@@ -29,7 +29,7 @@ public class inventorizeui extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					inventorizeui frame = new inventorizeui();
+					InventorizeGUI frame = new InventorizeGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class inventorizeui extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public inventorizeui() {
+	public InventorizeGUI() {
 		setTitle("inventorize");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -70,7 +70,7 @@ public class inventorizeui extends JFrame {
 		JScrollBar scrollBar = new JScrollBar();
 		
 		txtSearch = new JTextField();
-		txtSearch.setText("Search...");
+		txtSearch.setText("search ");
 		txtSearch.setColumns(10);
 		
 		JButton btnSearch = new JButton("SEARCH");
