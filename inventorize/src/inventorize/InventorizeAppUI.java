@@ -27,7 +27,7 @@ public class InventorizeAppUI extends JFrame {
 	private JButton btnUpdate;
 	private JButton btnDelete;
 	private JButton btnADD;
-	private JButton btnClear;
+	private JTextField textFieldTitle;
 
 	/**
 	 * Launch the application.
@@ -85,7 +85,10 @@ public class InventorizeAppUI extends JFrame {
 		
 		btnADD = new JButton("ADD");
 		
-		btnClear = new JButton("CLEAR");
+		JLabel lblTitle = new JLabel("Title");
+		
+		textFieldTitle = new JTextField();
+		textFieldTitle.setColumns(10);
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -95,26 +98,31 @@ public class InventorizeAppUI extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblId)
-								.addComponent(lblName)
-								.addComponent(lblQty))
-							.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+										.addComponent(lblId)
+										.addComponent(lblName)
+										.addComponent(lblTitle))
+									.addPreferredGap(ComponentPlacement.RELATED))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+										.addComponent(lblPrice)
+										.addComponent(lblQty))
+									.addPreferredGap(ComponentPlacement.RELATED)))
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(textFieldName, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-								.addComponent(textFieldQty, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-								.addComponent(textFieldID, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(4)
-							.addComponent(lblPrice)
-							.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textFieldQty, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+								.addComponent(textFieldTitle, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+								.addComponent(textFieldName, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+								.addComponent(textFieldID, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+								.addComponent(textFieldPrice, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.UNRELATED))
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnUpdate)
-								.addComponent(textFieldPrice, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 									.addComponent(btnADD, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnClear, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnDelete, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(btnDelete, Alignment.LEADING)))
+							.addGap(32)))
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
@@ -132,7 +140,11 @@ public class InventorizeAppUI extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addComponent(lblName)
 								.addComponent(textFieldName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.RELATED)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(textFieldTitle, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblTitle))
+							.addGap(10)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(textFieldQty, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblQty))
@@ -144,8 +156,6 @@ public class InventorizeAppUI extends JFrame {
 							.addComponent(btnADD)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnDelete)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnClear)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnUpdate)))
 					.addContainerGap(15, GroupLayout.PREFERRED_SIZE))
