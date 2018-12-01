@@ -1,0 +1,14 @@
+ID,Name, Title, Quantity, Price
+1, Pink Floyd, The Dark Side of the Moon,29,29.99
+2, Prince, Purple Rain (Remastered),23,24.99
+3, Guardians of the Galaxy, Soundtrack,8,24.99
+4, Aretha Franklin, Aretha's Greatest Hits, 16, 24.99
+5, The Beatles, The White Album (Deluxe Edition),10,90.34
+6, Fleetwood Mac, Rumours,78,21.42
+7, Michael Jackson, Thriller,64,16.76
+8, Nirvana, Nevermind,75,19.79
+9, Johnny Cash, The Essential Johnny Cash,3,22.99
+10, Led Zeppelin, Led Zeppelin IV (Remastered),15,21.42
+
+11,Janis Joplin,Pearl,24,22.99
+11,Janis Joplin,Pearl,24,22.99
