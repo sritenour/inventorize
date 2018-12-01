@@ -3,15 +3,7 @@ Inventory Management App
 
 Inventorize helps track inventory to keep the right amount of goods on hand to fulfill customer demand without overstocking.
 
-Features:
-
-•	Easily searchable inventory
-
-•	Sales tracking 
-
-•	Alert messages when inventory falls below minimum levels to avoid out of stocks
-
-•	Reports to help ensure accurate planning and forecasting
+Features: Add, Delete, Save inventory
 
 Built with: Eclipse
 
