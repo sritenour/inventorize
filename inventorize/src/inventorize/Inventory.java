@@ -28,6 +28,7 @@ public class Inventory {
 		
 	}
 	
+	// setter methods
 	public void setID(String id)
 	{
 		this.ID = id;
@@ -53,6 +54,7 @@ public class Inventory {
 		this.price = itemPrice;
 	}
 	
+	// getter methods
 	public String getID(String id)
 	{
 		return this.ID;
