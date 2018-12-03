@@ -9,6 +9,5 @@ ID,Name, Title, Quantity, Price
 8, Nirvana, Nevermind,75,19.79
 9, Johnny Cash, The Essential Johnny Cash,3,22.99
 10, Led Zeppelin, Led Zeppelin IV (Remastered),15,21.42
-
 11,Janis Joplin,Pearl,24,22.99
 
