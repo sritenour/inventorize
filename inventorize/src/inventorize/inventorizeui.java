@@ -12,6 +12,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import javax.swing.JLabel;
 
 public class inventorizeui extends JFrame {
 
@@ -21,6 +26,11 @@ public class inventorizeui extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtSearch;
+	private JTextField qtyField;
+	private JTextField idField;
+	private JTextField nameField;
+	private JTextField titleField;
+	private JTextField priceField;
 
 	/**
 	 * Launch the application.
@@ -44,93 +54,168 @@ public class inventorizeui extends JFrame {
 	public inventorizeui() {
 		setTitle("inventorize");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 640, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnProduct = new JButton("PRODUCT");
+		JButton btnProduct = new JButton("INVENTORY");
+		btnProduct.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Inventory Actions
+			}
+		});
 		
-		JButton btnCustomer = new JButton("CUSTOMER");
+		/**
+		 * Adding to inventory and showing extra options
+		 */
+		JButton btnOrder = new JButton("ADD TO...");
+		btnOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//
+				lblQty.setEnabled(true);
+			}
+		});
 		
-		JButton btnVendor = new JButton("VENDOR");
-		
-		JButton btnOrder = new JButton("ORDER");
-		
-		JButton btnSales = new JButton("SALES");
-		
-		JButton btnReport = new JButton("REPORT");
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
+		JButton btnSales = new JButton("REMOVE FROM...");
+		btnSales.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// remove from actions
+			}
+		});
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		
 		txtSearch = new JTextField();
-		txtSearch.setText("Search...");
+		txtSearch.setText("");
 		txtSearch.setColumns(10);
 		
 		JButton btnSearch = new JButton("SEARCH");
+		
+		JLabel lblQty = new JLabel("QTY:");
+		lblQty.setEnabled(false);
+		
+		qtyField = new JTextField();
+		qtyField.setEnabled(false);
+		qtyField.setColumns(10);
+		
+		JLabel lblId = new JLabel("ID:");
+		lblId.setEnabled(false);
+		
+		JLabel lblName = new JLabel("NAME:");
+		lblName.setEnabled(false);
+		
+		idField = new JTextField();
+		idField.setEnabled(false);
+		idField.setColumns(10);
+		
+		JLabel lblTitle = new JLabel("TITLE:");
+		lblTitle.setEnabled(false);
+		
+		JLabel lblPrice = new JLabel("PRICE:");
+		lblPrice.setEnabled(false);
+		
+		nameField = new JTextField();
+		nameField.setEnabled(false);
+		nameField.setColumns(10);
+		
+		titleField = new JTextField();
+		titleField.setEnabled(false);
+		titleField.setColumns(10);
+		
+		priceField = new JTextField();
+		priceField.setEnabled(false);
+		priceField.setColumns(10);
+		
+		JButton btnUpdate = new JButton("UPDATE");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Update inventory according to initial option
+				lblQty.setEnabled(false);
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnReport, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-								.addComponent(btnSales, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-								.addComponent(btnOrder, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-								.addComponent(btnVendor, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-								.addComponent(btnCustomer, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-								.addComponent(btnProduct, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
-							.addGap(28))
+								.addComponent(btnProduct, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+								.addComponent(btnOrder, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+								.addComponent(btnSales, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblName)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(nameField, GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblId)
+									.addPreferredGap(ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+									.addComponent(idField, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblTitle)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(titleField, GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblQty, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblPrice))
+									.addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(priceField)
+										.addComponent(qtyField, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)))))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
-							.addGap(26)))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+							.addGap(45)
+							.addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(txtSearch)
-							.addPreferredGap(ComponentPlacement.RELATED)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(btnSearch))
-						.addComponent(panel_1, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE))
-					.addGap(4)
-					.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 393, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(4)
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(34)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtSearch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnSearch))))
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtSearch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnProduct)
+						.addComponent(btnSearch))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-						.addComponent(scrollBar, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addComponent(btnProduct)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnCustomer)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnVendor)
-							.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(btnOrder)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnSales)
+							.addGap(18)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblId)
+								.addComponent(idField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnReport)))
-					.addGap(32))
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblName)
+								.addComponent(nameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblTitle)
+								.addComponent(titleField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblQty)
+								.addComponent(qtyField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblPrice)
+								.addComponent(priceField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(26)
+							.addComponent(btnUpdate))
+						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
